@@ -5,9 +5,7 @@ const useCounter = (sighn = true) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-    // setCounter((prevCounter) => `${prevCounter} ${sighn} ${1}`);
-    // setCounter((prevCounter) => prevCounter + 1);
-    // setCounter(counterUpdateFn());
+
       if (sighn) {
         setCounter((prevCounter) => prevCounter + 1);
       } else {
@@ -17,7 +15,7 @@ const useCounter = (sighn = true) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [sighn]);
 
   return counter;
 };
